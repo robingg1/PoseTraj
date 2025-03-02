@@ -12,7 +12,7 @@ Official implementation of paper "PoseTraj: Pose-Aware Trajectory Control in Vid
 ## **Updates**
 
 <!--- [ ] Mar. 13, 2024. Release the train code in **three month**.-->
-- [ ] Support gradio demo/ Checkpoints on other datasets.
+- [ ] Support gradio demo/ More Checkpoints.
 - [ ] Release checkpoint on VIPSeg.
 - [ ] Release training and inference code.
 - [x] Repo initalization.
