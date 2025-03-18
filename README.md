@@ -5,7 +5,7 @@ Official implementation of paper "PoseTraj: Pose-Aware Trajectory Control in Vid
 The paper will be available soon.
 
 <p align="center">
-<img src="./assets/stage-split.jpg" width="800px"/>  
+<img src="./assets/overview.jpg" width="800px"/>  
 <br>
 </p>
 
