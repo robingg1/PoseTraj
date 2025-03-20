@@ -5,7 +5,7 @@ Official implementation of paper "PoseTraj: Pose-Aware Trajectory Control in Vid
 The paper will be available soon.
 
 <p align="center">
-<img src="./assets/overview.jpg" width="800px"/>  
+<img src="./assets/overview_new.jpg" width="800px"/>  
 <br>
 </p>
 
@@ -21,7 +21,13 @@ The paper will be available soon.
 ---
 
 ## Abstract
-We introduce PoseTraj, the first open-domain, Pose-Aware video dragging model for reliable 3D-aligned animations from 2D trajectories. Our method incorporates a novel Two-Stage Pose-Aware Pretraining framework, improving 3D understanding across diverse trajectories. Specifically, we 1) construct a large-scale synthetic dataset containing 10k videos of objects following rotational trajectories and 2) enhance the model perception of object pose changes by generating 3D bounding boxes as intermediate supervision signals. Following this, we fine-tune the trajectory-controlling module on open-domain videos, applying an additional camera disentanglement module to further refine motion accuracy. Experiments on various benchmark scenarios demonstrate that PoseTraj not only excels in 3D Pose-Aligned dragging for rotational scenarios but also outperforms existing baselines in trajectory accuracy and video quality.
+Recent advancements in trajectory-guided video generation have achieved notable progress. 
+However, existing models still face challenges in generating object motions with potentially changing 6D poses under wide-range rotations, due to limited 3D understanding. 
+To address this problem, we introduce PoseTraj, a pose-aware video dragging model for generating 3D-aligned motion from 2D trajectories. 
+Our method adopts a novel two-stage pose-aware pretraining framework, improving 3D understanding across diverse trajectories. 
+Specifically, we propose a large-scale synthetic dataset PoseTraj-10k, containing 10k videos of objects following rotational trajectories, and enhance the model perception of object pose changes by incorporating 3D bounding boxes as intermediate supervision signals. 
+Following this, we fine-tune the trajectory-controlling module on real-world videos, applying an additional camera-disentanglement module to further refine motion accuracy.
+Experiments on various benchmark datasets demonstrate that our method not only excels in 3D pose-aligned dragging for rotational trajectories but also outperforms existing baselines in trajectory accuracy and video quality.
 
 ---
 
