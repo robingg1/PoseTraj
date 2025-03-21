@@ -638,7 +638,7 @@ class Trajectory_VIPSeg_Data_old(Dataset):
         pixel_values = self.pixel_transforms(pixel_values)
         trajectories = numpy_to_pt(trajectories)
         trajectories = self.pixel_transforms(trajectories)
-        # if self.return_bbox:
+        # if self.return_bbox:ss
         #     bbox = numpy_to_pt(bbox)
         #     bbox = self.pixel_transforms(bbox)
         # if self.mask_initial:
@@ -661,8 +661,7 @@ class Trajectory_VIPSeg_Data(Dataset):
         self,
         path: str = "./data",
         fps: int = 8,
-        # sample_size = (320, 576),
-        sample_size = (256, 320),
+        sample_size = (320, 576),
         repeat_times = 4,
         frame_length = 14,
         images_bbox = False,
@@ -671,6 +670,8 @@ class Trajectory_VIPSeg_Data(Dataset):
         split_file = "train.txt",
         train_mode = "split_vid",
         return_cam = False,
+        cam_norm = False,
+        cam_mask_ratio = 0,
         camera_path = None
     ):
         self.data_path = path
@@ -681,6 +682,8 @@ class Trajectory_VIPSeg_Data(Dataset):
         self.repeat_times = repeat_times
         self.frame_length = frame_length
         self.return_cam = return_cam
+        self.cam_mask_ratio = cam_mask_ratio
+        self.cam_norm = cam_norm
 
         with open(split_file, 'r') as f:
             lines = f.readlines()
@@ -807,10 +810,14 @@ class Trajectory_VIPSeg_Data(Dataset):
                     cam_T = np.zeros(cam_T.shape)
                 # print(cam_T)
                 cam_parameter = np.concatenate((cam_R, cam_T), axis=-1)[start_idx:end_idx, :]
+                if random.random() < self.cam_mask_ratio:
+                    cam_parameter = np.zeros((self.frame_length, 12))
             else:
                 cam_parameter = np.zeros((self.frame_length, 12))
             # norm camera movement based on first frame
-            cam_parameter -= cam_parameter[0]
+            if self.cam_norm:
+                cam_parameter -= cam_parameter[0]
+            
         else:
             cam_parameter = None
         

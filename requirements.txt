@@ -1,0 +1,17 @@
+accelerate==0.18.0
+decord==0.6.0
+deepspeed==0.10.0
+diffusers==0.24.0
+huggingface-hub
+loralib==0.1.0
+numpy==1.24.0
+omegaconf==2.3.0
+opencv-python==4.8.0.74
+torch==2.0.1
+torchaudio==2.0.2
+torchvision==0.15.2
+tqdm==4.65.0
+transformers==4.27.4
+einops==0.7.0s
+imageio==2.33.0
+imageio-ffmpeg==0.4.9

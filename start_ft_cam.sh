@@ -1,0 +1,20 @@
+CUDA_VISIBLE_DEVICES=1 accelerate launch scripts/train_svd_traj_VIPSeg_14_cam_concat.py \
+    --pretrained_model_name_or_path="../stable-video-diffusion-img2vid" \
+    --output_dir="model_out_VIPSeg_10k_ft" \
+    --video_folder="dataset/VIPSeg" \
+    --validation_image_folder="dataset/VIPSeg_val" \
+    --width=576 \
+    --height=320 \
+    --learning_rate=1e-5 \
+    --per_gpu_batch_size=1 \
+    --num_train_epochs=3 \
+    --mixed_precision="fp16" \
+    --gradient_accumulation_steps=2 \
+    --checkpointing_steps=2000 \
+    --validation_steps=400 \
+    --gradient_checkpointing \
+    --num_validation_images=1 \
+    --checkpoints_total_limit=2 \
+    --controlnet_model_name_or_path=model_out_objaverse_10k_bbox/checkpoint-50000 \
+    --cam_path dataset/VIPSeg/estimated_cam_rt \
+    --cam_mask_ratio 0.5
