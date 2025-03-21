@@ -1,7 +1,7 @@
 # PoseTraj
 ### [CVPR 2025] PoseTraj: Pose-Aware Trajectory Control in Video Diffusion
 
-## Steps for rendering PoseTraj-10k from sarch
+## Steps for rendering PoseTraj-10k
 ### Step 1: Install blender
 ### Step 2: Download Objaverse dataset.
 Following instruction of [Objaverse Codebase](https://github.com/allenai/objaverse-xl)。
