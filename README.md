@@ -14,7 +14,7 @@ Official implementation of paper ["PoseTraj: Pose-Aware Trajectory Control in Vi
 
 <!--- [ ] Mar. 13, 2024. Release the train code in **three month**.-->
 - [ ] Support gradio demo/ More Checkpoints.
-- [ ] Release checkpoint on VIPSeg.
+- [x] Release checkpoint on VIPSeg.
 - [x] Release training and inference code.
 - [x] Release dataset and rendering process.
 - [x] Repo initalization.
@@ -80,7 +80,8 @@ conda activate PoseTraj
 pip install -r requirements.txt
 ```
 ### **Step 2. Download model weights**
-Download PoseTraj model weights from [hub](https://drive.google.com/file/d/1mtThfs9zQ7Skuetl6J7tgi865iVBvZ7q/view?usp=sharing)
+Download PoseTraj model weights from [google drive](https://drive.google.com/file/d/1mtThfs9zQ7Skuetl6J7tgi865iVBvZ7q/view?usp=sharing)
+
 Download SVD model weights from [hub](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid).
 
 ## **2. Dataset Preparation**
